@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+            margin: auto;
+            padding: 2px;          
+
+        }
+        .image-list{
+            width: 20%;
+            margin: 5px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+            {% for uData in uDatas %}
+                <!-- {{uData.url.raw}} -->
+                <!-- <div class="image-list"> -->
+                        <img class="image-list" src="{{uData.url.raw}}" alt="image" >
+                <!-- </div> -->
+            {% endfor %}
+        {%endblock%}
+    </div>
+</body>
+</html>
